@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple & Modern Calculator</title>
+  <!-- Google Fonts for clean modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Main container centering the calculator -->
+  <main class="app-container">
+    <div class="calculator-card" role="region" aria-label="Calculator">
+      
+      <!-- Header bar with decorative badge -->
+      <header class="calculator-header">
+        <span class="calculator-title">CALCULATOR</span>
+        <span class="badge">Standard</span>
+      </header>
+
+      <!-- Calculator Display Screen -->
+      <section class="display-screen" aria-live="polite">
+        <!-- Shows previous operand and chosen operator (e.g. "12 +") -->
+        <div class="previous-operand" id="previous-operand" aria-label="Previous calculation"></div>
+        <!-- Shows current input number or final calculated result -->
+        <div class="current-operand" id="current-operand" aria-label="Current input">0</div>
+      </section>
+
+      <!-- Calculator Buttons Grid -->
+      <section class="buttons-grid" id="buttons-grid">
+        <!-- Row 1: Special Functions & Division -->
+        <button type="button" class="btn btn-special" data-action="clear" aria-label="Clear all">AC</button>
+        <button type="button" class="btn btn-special" data-action="delete" aria-label="Delete last digit">DEL</button>
+        <button type="button" class="btn btn-special" data-action="percent" aria-label="Percentage">%</button>
+        <button type="button" class="btn btn-operator" data-action="operator" data-value="÷" aria-label="Divide">÷</button>
+
+        <!-- Row 2: Numbers 7-9 & Multiplication -->
+        <button type="button" class="btn btn-number" data-action="number" data-value="7">7</button>
+        <button type="button" class="btn btn-number" data-action="number" data-value="8">8</button>
+        <button type="button" class="btn btn-number" data-action="number" data-value="9">9</button>
+        <button type="button" class="btn btn-operator" data-action="operator" data-value="×" aria-label="Multiply">×</button>
+
+        <!-- Row 3: Numbers 4-6 & Subtraction -->
+        <button type="button" class="btn btn-number" data-action="number" data-value="4">4</button>
+        <button type="button" class="btn btn-number" data-action="number" data-value="5">5</button>
+        <button type="button" class="btn btn-number" data-action="number" data-value="6">6</button>
+        <button type="button" class="btn btn-operator" data-action="operator" data-value="−" aria-label="Subtract">−</button>
+
+        <!-- Row 4: Numbers 1-3 & Addition -->
+        <button type="button" class="btn btn-number" data-action="number" data-value="1">1</button>
+        <button type="button" class="btn btn-number" data-action="number" data-value="2">2</button>
+        <button type="button" class="btn btn-number" data-action="number" data-value="3">3</button>
+        <button type="button" class="btn btn-operator" data-action="operator" data-value="+" aria-label="Add">+</button>
+
+        <!-- Row 5: Zero, Decimal & Equals -->
+        <button type="button" class="btn btn-number btn-zero" data-action="number" data-value="0">0</button>
+        <button type="button" class="btn btn-number" data-action="decimal" data-value=".">.</button>
+        <button type="button" class="btn btn-equals" data-action="calculate" aria-label="Equals">=</button>
+      </section>
+
+      <!-- Keyboard shortcuts helper tip -->
+      <footer class="calculator-footer">
+        <span class="keyboard-hint"><kbd>Keyboard Supported</kbd> (0-9, +, -, *, /, Enter, Backspace, Esc)</span>
+      </footer>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
